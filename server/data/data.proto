@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package data;
+
+service DataStream {
+    rpc StreamData (stream ContactRequest) returns (ContactSummary) {}
+}
+
+// The request message
+message ContactRequest {
+    string name = 1;
+    string email = 2;
+    string mobile_number = 3;
+}
+
+// The response message
+message ContactSummary {
+    string summary = 1;
+}
